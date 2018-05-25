@@ -6,7 +6,7 @@ apply from: '../config/common.gradle'
 android {
     compileSdkVersion Versions.compileSdk
     defaultConfig {
-        applicationId "com.jcmsalves.londontubestatus"
+        applicationId "com.jcmsalves.codewars"
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdk
         versionCode Versions.releaseVersionCode

@@ -53,7 +53,7 @@ object Versions {
     val rxJava = "2.1.12"
     val rxAndroid = "2.0.2"
     val loggingInterceptor = "3.10.0"
-    val dagger = "2.13"
+    val dagger = "2.16"
     val javaxInject = "1"
     val ktlint = "0.20.0"
 

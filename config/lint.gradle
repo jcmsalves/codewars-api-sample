@@ -1,0 +1,35 @@
+// Lint checks. See https://developer.android.com/studio/write/lint.html and http://tools.android.com/tech-docs/lint-in-studio-2-3
+android {
+    lintOptions {
+        baseline file("config/lint/lint-baseline.xml")
+        abortOnError true
+        checkAllWarnings true
+        ignoreWarnings false
+        lintConfig file("config/lint/lint-exclusions.xml")
+        checkReleaseBuilds true
+        warningsAsErrors true
+        htmlReport true
+        xmlReport true
+        // See http://tools.android.com/tips/lint-checks for all the lint checks.
+        disable 'NewerVersionAvailable', // Can't have lint failing every time a new version of a library is out.
+                // Can't have lint failing every time a new version of a library is out.
+                'GradleDependency',
+                // Checks for inconsistency between support library versions. Unfortunately libraries mess this up.
+                'GradleCompatible',
+                // This check scans through libraries looking for calls to APIs that are not included in Android. Nothing useful for us.
+                'InvalidPackage',
+                // We are using the name ic_<whatever> for things that have all sorts of different dimensions, while android expects icons
+                // to only have specific dimensions. See https://material.io/guidelines/style/icons.html#
+                'IconExpectedSize',
+                // We currently don't force the use of sparse arrays in the project
+                'UseSparseArrays',
+                // Ignore long vector path errors. Maybe check with design team if can be improved
+                'VectorPath',
+                // a View that overrides onTouchEvent or uses an OnTouchListener does not also implement performClick and call it when clicks are detected
+                'ClickableViewAccessibility',
+                // This is not worth addressing
+                'Overdraw',
+                // Lint is complaining about declared third party activities in the manifest not being used in the app, but they clearly are.
+                'MissingRegistered'
+    }
+}

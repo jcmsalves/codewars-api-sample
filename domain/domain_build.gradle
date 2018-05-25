@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+apply from: '../config/common.gradle'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // dagger annotations
+    implementation ProjectDependencies.javaInject
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

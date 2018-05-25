@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+
+apply from: '../config/android-common.gradle'
+apply from: '../config/common.gradle'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.releaseVersionCode
+        versionName Versions.releaseVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // project dependencies
+    implementation project(ProjectModules.domain)
+
+    // retrofit / network dependencies
+    api ProjectDependencies.retrofit
+    implementation ProjectDependencies.rxJava2Adapter
+    implementation ProjectDependencies.gson
+    implementation ProjectDependencies.loggingInterceptor
+}

@@ -2,6 +2,7 @@ package com.jcmsalves.codewarsapi.data.di
 
 import com.jcmsalves.codewarsapi.data.BuildConfig
 import com.jcmsalves.codewarsapi.data.remote.interceptors.AuthInterceptor
+import com.jcmsalves.codewarsapi.data.user.remote.UserService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -15,7 +16,7 @@ import javax.inject.Singleton
 class NetworkModule {
 
     companion object {
-        private const val BASE_URL = "https://www.codewars.com/api/v1"
+        private const val BASE_URL = "https://www.codewars.com/api/v1/"
     }
 
     @Provides
@@ -39,4 +40,7 @@ class NetworkModule {
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
+
+    @Provides
+    fun provideUserService(retrofit: Retrofit): UserService = retrofit.create(UserService::class.java)
 }

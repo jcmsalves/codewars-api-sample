@@ -1,7 +1,7 @@
 package com.jcmsalves.codewarsapi.domain.user
 
 data class User(val username: String,
-                val name: String,
+                val name: String?,
                 val leaderboardPosition: Long,
                 val overallRank: Rank,
                 val languages: List<Language>

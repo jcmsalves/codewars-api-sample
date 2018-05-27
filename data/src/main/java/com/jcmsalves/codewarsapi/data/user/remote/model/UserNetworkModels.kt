@@ -6,7 +6,7 @@ data class UserModel(
     @SerializedName("username")
     val username: String,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("leaderboardPosition")
     val leaderboardPosition: Long,
     @SerializedName("ranks")

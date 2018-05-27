@@ -1,8 +1,9 @@
 package com.jcmsalves.codewarsapi
 
 import android.app.Application
-import com.jcmsalves.codewarsapi.di.ApplicationModule
 import com.jcmsalves.codewarsapi.di.ApplicationComponent
+import com.jcmsalves.codewarsapi.di.ApplicationModule
+import com.jcmsalves.codewarsapi.di.DaggerApplicationComponent
 
 class CodewarsApp : Application() {
 
@@ -12,7 +13,7 @@ class CodewarsApp : Application() {
         super.onCreate()
 
         applicationComponent = DaggerApplicationComponent.builder()
-            .appModule(ApplicationModule(this))
+            .applicationModule(ApplicationModule(this))
             .build()
     }
 }

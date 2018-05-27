@@ -7,6 +7,6 @@ import retrofit2.http.Path
 
 interface UserService {
 
-    @GET("/v1/users/{id_or_username}")
+    @GET("users/{id_or_username}")
     fun getUser(@Path("id_or_username") userSearch: String): Single<UserModel>
 }

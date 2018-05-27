@@ -27,6 +27,7 @@ class UserRepositoryImpl @Inject constructor(
     private fun fetchFromDb(userSearch: String): Single<User?> {
         return userDao.getUserByUsername(userSearch)
             .map { userMapper.map(it) }
+            .doOnError { fetchFromRemote(userSearch) }
     }
 
     private fun fetchFromRemote(userSearch: String): Single<User?> {

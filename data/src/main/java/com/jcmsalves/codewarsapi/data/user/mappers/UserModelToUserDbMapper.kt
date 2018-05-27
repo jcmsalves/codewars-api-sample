@@ -12,21 +12,21 @@ import javax.inject.Inject
 class UserModelToUserDbMapper @Inject constructor() : Mapper<UserModel, UserDb> {
 
     companion object {
-        private const val LANGUAGE_KOTLIN = "kotlin"
-        private const val LANGUAGE_JAVA = "java"
-        private const val LANGUAGE_COFFESCRIPT = "coffeescript"
-        private const val LANGUAGE_JAVASCRIPT = "javascript"
-        private const val LANGUAGE_RUBY = "ruby"
-        private const val LANGUAGE_SCALA = "scala"
-        private const val LANGUAGE_PYTHON = "python"
-        private const val LANGUAGE_PHP = "php"
+        const val LANGUAGE_KOTLIN = "kotlin"
+        const val LANGUAGE_JAVA = "java"
+        const val LANGUAGE_COFFESCRIPT = "coffeescript"
+        const val LANGUAGE_JAVASCRIPT = "javascript"
+        const val LANGUAGE_RUBY = "ruby"
+        const val LANGUAGE_SCALA = "scala"
+        const val LANGUAGE_PYTHON = "python"
+        const val LANGUAGE_PHP = "php"
     }
 
     override fun map(from: UserModel): UserDb {
         return UserDb(username = from.username,
             name = from.name,
             leaderboardPosition = from.leaderboardPosition,
-            overallRank = mapRankModelToRankDb(from.ranks.rank))
+            overallRank = mapRankModelToRankDb(from.ranks.overall))
     }
 
     private fun mapRankModelToRankDb(from: RankModel): RankDb {

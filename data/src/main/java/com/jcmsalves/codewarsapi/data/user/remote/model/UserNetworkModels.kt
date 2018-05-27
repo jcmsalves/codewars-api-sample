@@ -16,7 +16,7 @@ data class UserModel(
 data class RanksModel(@SerializedName("languages")
                       val languages: LanguagesModel,
                       @SerializedName("overall")
-                      val rank: RankModel)
+                      val overall: RankModel)
 
 data class RankModel(@SerializedName("score")
                      val score: Int,
@@ -28,18 +28,18 @@ data class RankModel(@SerializedName("score")
                      val rank: Int = 0)
 
 data class LanguagesModel(@SerializedName("kotlin")
-                          val kotlin: RankModel?,
+                          val kotlin: RankModel? =  null,
                           @SerializedName("java")
-                          val java: RankModel?,
+                          val java: RankModel? =  null,
                           @SerializedName("coffeescript")
-                          val coffeescript: RankModel?,
+                          val coffeescript: RankModel? =  null,
                           @SerializedName("javascript")
-                          val javascript: RankModel?,
+                          val javascript: RankModel? =  null,
                           @SerializedName("ruby")
-                          val ruby: RankModel?,
+                          val ruby: RankModel? =  null,
                           @SerializedName("scala")
-                          val scala: RankModel?,
+                          val scala: RankModel? =  null,
                           @SerializedName("python")
-                          val python: RankModel?,
+                          val python: RankModel? =  null,
                           @SerializedName("php")
-                          val php: RankModel?)
+                          val php: RankModel? =  null)

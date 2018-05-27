@@ -19,5 +19,3 @@ interface ApplicationComponent {
 
     fun inject(membersActivity: MembersActivity)
 }
-
-

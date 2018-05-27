@@ -24,10 +24,8 @@ class MembersActivity : AppCompatActivity() {
         whatever_button.setOnClickListener { v ->
             getUserInteractor.execute(GetUserRequest("geeves", false))
                 .subscribe(
-                    {user: User? -> Toast.makeText(applicationContext, user.toString(), Toast.LENGTH_LONG).show() },
-                    {t: Throwable? -> Toast.makeText(applicationContext, t?.message, Toast.LENGTH_LONG).show() })
+                    { user: User? -> Toast.makeText(applicationContext, user.toString(), Toast.LENGTH_LONG).show() },
+                    { t: Throwable? -> Toast.makeText(applicationContext, t?.message, Toast.LENGTH_LONG).show() })
         }
-
     }
-
 }

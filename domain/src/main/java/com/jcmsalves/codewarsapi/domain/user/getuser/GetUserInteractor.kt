@@ -19,5 +19,4 @@ class GetUserInteractor @Inject constructor(
             .observeOn(rxJava2Schedulers.main())
             .toObservable()
     }
-
 }

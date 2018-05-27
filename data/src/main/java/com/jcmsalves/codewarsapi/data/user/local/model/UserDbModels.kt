@@ -15,10 +15,11 @@ class UserAndLanguages {
 }
 
 @Entity(tableName = "users")
-data class UserDb(@PrimaryKey val username: String,
-                  val name: String?,
-                  val leaderboardPosition: Long,
-                  @Embedded(prefix = "overall_") val overallRank: RankDb
+data class UserDb(
+    @PrimaryKey val username: String,
+    val name: String?,
+    val leaderboardPosition: Long,
+    @Embedded(prefix = "overall_") val overallRank: RankDb
 )
 
 @Entity(tableName = "languages",
@@ -26,13 +27,16 @@ data class UserDb(@PrimaryKey val username: String,
         parentColumns = arrayOf("username"),
         childColumns = arrayOf("username"),
         onDelete = ForeignKey.CASCADE))])
-data class LanguageDb(@PrimaryKey(autoGenerate = true) val id: Long = 0,
-                      val languageName: String,
-                      @Embedded(prefix = "language_") val rank: RankDb,
-                      val username: String)
+data class LanguageDb(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val languageName: String,
+    @Embedded(prefix = "language_") val rank: RankDb,
+    val username: String
+)
 
-
-data class RankDb(val score: Int,
-                  val color: String,
-                  val name: String,
-                  val rank: Int = 0)
+data class RankDb(
+    val score: Int,
+    val color: String,
+    val name: String,
+    val rank: Int = 0
+)

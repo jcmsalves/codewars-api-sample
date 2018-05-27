@@ -10,5 +10,4 @@ import com.jcmsalves.codewarsapi.data.user.local.model.UserDb
 abstract class CodewarsDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
-
 }

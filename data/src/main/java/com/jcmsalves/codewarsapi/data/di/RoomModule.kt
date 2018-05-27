@@ -20,5 +20,4 @@ class RoomModule {
     @Singleton
     @Provides
     fun providesProductDao(codewarsDatabase: CodewarsDatabase): UserDao = codewarsDatabase.userDao()
-
 }

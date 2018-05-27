@@ -12,7 +12,8 @@ class InteractorsModule {
 
     @Provides
     @Singleton
-    fun provideGetUserInteractor(userRepository: UserRepository,
-                              rxJava2Schedulers: RxJava2Schedulers): GetUserInteractor
-        = GetUserInteractor(userRepository, rxJava2Schedulers)
+    fun provideGetUserInteractor(
+        userRepository: UserRepository,
+        rxJava2Schedulers: RxJava2Schedulers
+    ): GetUserInteractor = GetUserInteractor(userRepository, rxJava2Schedulers)
 }

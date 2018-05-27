@@ -46,5 +46,4 @@ class UserRepositoryImpl @Inject constructor(
         return userDao.getUsers()
             .map { it.map { userMapper.map(it) }.take(5) }
     }
-
 }

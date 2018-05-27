@@ -68,7 +68,7 @@ class UserRepositoryImplTest {
 
         // then
         testObserver.assertNoErrors()
-        testObserver.assertValue{
+        testObserver.assertValue {
             it.username == getUserModel().username
         }
         verify(mockUserService).getUser(userSearch = "username")
@@ -84,7 +84,7 @@ class UserRepositoryImplTest {
 
         // then
         testObserver.assertNoErrors()
-        testObserver.assertValue{
+        testObserver.assertValue {
             it.username == getUserAndLanguages().userDb?.username
         }
         verify(mockUserDao).getUserByUsername(username = "username")

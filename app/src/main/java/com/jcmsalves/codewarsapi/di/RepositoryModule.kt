@@ -15,9 +15,10 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideUserRepository(userService: UserService,
-                              userDao: UserDao,
-                              userDbMapper: UserModelToUserDbMapper,
-                              userMapper: UserAndLanguagesToUserMapper):
-        UserRepository = UserRepositoryImpl(userService, userDao, userDbMapper, userMapper)
+    fun provideUserRepository(
+        userService: UserService,
+        userDao: UserDao,
+        userDbMapper: UserModelToUserDbMapper,
+        userMapper: UserAndLanguagesToUserMapper
+    ): UserRepository = UserRepositoryImpl(userService, userDao, userDbMapper, userMapper)
 }

@@ -55,7 +55,7 @@ class GetUserInteractorTest {
     }
 }
 
-private fun getUser() : User {
+private fun getUser(): User {
     return User(username = "username",
         name = "name",
         leaderboardPosition = 1L,
@@ -63,14 +63,14 @@ private fun getUser() : User {
         languages = listOf(getLanguage(), getLanguage()))
 }
 
-private fun getRank() : Rank {
+private fun getRank(): Rank {
     return Rank(score = 55,
         color = "color",
         name = "name",
         rank = 99)
 }
 
-private fun getLanguage() : Language {
+private fun getLanguage(): Language {
     return Language(languageName = "language_name",
         rank = getRank())
 }

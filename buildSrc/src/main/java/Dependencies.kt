@@ -29,6 +29,10 @@ object ProjectDependencies {
     val supportAppCompat = "com.android.support:appcompat-v7:${Versions.appcompat}"
     val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
 
+    val room = "android.arch.persistence.room:runtime:${Versions.room}"
+    val roomCompiler = "android.arch.persistence.room:compiler:${Versions.room}"
+    val roomRxJava = "android.arch.persistence.room:rxjava2:${Versions.room}"
+
     val junit = "junit:junit:${Versions.junit}"
     val assertJ = "org.assertj:assertj-core:${Versions.assertJ}"
     val mockito = "org.mockito:mockito-core:${Versions.mockito}"
@@ -56,6 +60,7 @@ object Versions {
     val dagger = "2.16"
     val javaxInject = "1"
     val ktlint = "0.20.0"
+    val room = "1.1.0"
 
     val junit = "4.12"
     val androidTestRunner = "1.0.1"

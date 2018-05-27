@@ -18,6 +18,12 @@ dependencies {
     // rxjava 2
     implementation ProjectDependencies.rxAndroid
 
+    // room
+    implementation ProjectDependencies.room
+    kapt ProjectDependencies.roomCompiler
+    implementation ProjectDependencies.roomRxJava
+
+
     // testing dependencies
     androidTestImplementation ProjectDependencies.androidTestRunner
     androidTestImplementation ProjectDependencies.espresso

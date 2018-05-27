@@ -49,7 +49,6 @@ class UserRepositoryImplTest {
         // given
         val throwable = Throwable()
         whenever(mockUserDao.getUserByUsername(anyString())).thenReturn(Single.error(throwable))
-        whenever(mockUserService.getUser(anyString())).thenReturn(Single.just(getUserModel()))
 
         // when
         userRepository.getUser(userSearch = "username", refresh = false).test()

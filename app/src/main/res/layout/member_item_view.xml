@@ -31,8 +31,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_small"
                 android:layout_weight="1"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/regular"
                 tools:text="member name" />
@@ -58,8 +56,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_small"
                 android:layout_weight="1"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/regular"
                 tools:text="member rank" />
@@ -85,8 +81,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_small"
                 android:layout_weight="1"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/regular"
                 tools:text="2345" />
@@ -112,8 +106,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_small"
                 android:layout_weight="1"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/regular"
                 tools:text="kotlin" />

@@ -32,4 +32,8 @@ dependencies {
     implementation ProjectDependencies.cardView
     implementation ProjectDependencies.recyclerView
     implementation ProjectDependencies.supportDesign
+
+    // lifecycle components
+    implementation ProjectDependencies.lifecycleExtensions
+    kapt ProjectDependencies.lifecycleCompiler
 }

@@ -1,9 +1,9 @@
 package com.jcmsalves.codewarsapi.di
 
 import com.jcmsalves.codewarsapi.CodewarsApp
-import com.jcmsalves.codewarsapi.user.UsersActivity
 import com.jcmsalves.codewarsapi.data.di.NetworkModule
 import com.jcmsalves.codewarsapi.data.di.RoomModule
+import com.jcmsalves.codewarsapi.user.UsersActivity
 import dagger.Component
 import javax.inject.Singleton
 
@@ -13,7 +13,8 @@ import javax.inject.Singleton
     RepositoryModule::class,
     RoomModule::class,
     MappersModule::class,
-    InteractorsModule::class])
+    InteractorsModule::class,
+    ViewModelsModule::class])
 interface ApplicationComponent {
     fun inject(codewarsApp: CodewarsApp)
 

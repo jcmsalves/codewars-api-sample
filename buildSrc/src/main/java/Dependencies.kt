@@ -36,6 +36,9 @@ object ProjectDependencies {
     val roomCompiler = "android.arch.persistence.room:compiler:${Versions.room}"
     val roomRxJava = "android.arch.persistence.room:rxjava2:${Versions.room}"
 
+    val lifecycleExtensions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
+    val lifecycleCompiler = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
+
     val junit = "junit:junit:${Versions.junit}"
     val assertJ = "org.assertj:assertj-core:${Versions.assertJ}"
     val mockito = "org.mockito:mockito-core:${Versions.mockito}"
@@ -64,6 +67,7 @@ object Versions {
     val javaxInject = "1"
     val ktlint = "0.20.0"
     val room = "1.1.0"
+    val lifecycle = "1.1.0"
 
     val junit = "4.12"
     val androidTestRunner = "1.0.1"

@@ -5,10 +5,13 @@
 
     <string name="members_activity_recent_searches">Recent searches:</string>
     <string name="members_activity_no_searches_label">You haven\'t made any searches yet. Use the search bar above and look for users by username or id.</string>
+    <string name="members_activity_error_message">There was an error, please try again</string>
 
     <string name="member_item_view_label_name">Name:</string>
     <string name="member_item_view_label_rank">Rank:</string>
     <string name="member_item_view_label_best_language">Best language:</string>
     <string name="member_item_view_label_leaderboard">Leaderboard position:</string>
-    <string name="members_activity_error_message">There was an error, please try again</string>
+
+    <string name="challenge_activity_menu_item_authored">Authored</string>
+    <string name="challenge_activity_menu_item_completed">Completed</string>
 </resources>

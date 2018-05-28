@@ -2,6 +2,7 @@ package com.jcmsalves.codewarsapi.user
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -10,7 +11,7 @@ import android.view.View
 import com.jcmsalves.codewarsapi.CodewarsApp
 import com.jcmsalves.codewarsapi.R
 import com.jcmsalves.codewarsapi.ViewModelFactory
-import com.jcmsalves.codewarsapi.domain.challenge.ChallengeRepository
+import com.jcmsalves.codewarsapi.challenge.ChallengesActivity
 import com.jcmsalves.codewarsapi.domain.user.User
 import com.jcmsalves.codewarsapi.user.viewmodel.RecentSearchesState
 import com.jcmsalves.codewarsapi.user.viewmodel.RecentSearchesViewModel
@@ -25,10 +26,12 @@ class UsersActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-    @Inject
-    lateinit var challengeRepository: ChallengeRepository
+    private val userClickedListener: (String) -> Unit = { it ->
+        this.startActivity(Intent(this, ChallengesActivity::class.java).apply {
+            putExtra(ChallengesActivity.EXTRA_USERNAME, it)
+        })
+    }
 
-    private val userClickedListener: (String) -> Unit = {  }
     private val userAdapter = UserAdapter(userClickedListener)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +66,7 @@ class UsersActivity : AppCompatActivity() {
             }
         })
 
-        recentSearchesViewModel.recentSearches.observe(this, Observer {it ->
+        recentSearchesViewModel.recentSearches.observe(this, Observer { it ->
             when (it) {
                 is RecentSearchesState.Loading -> showRecentsLoading()
                 is RecentSearchesState.Error -> showError()

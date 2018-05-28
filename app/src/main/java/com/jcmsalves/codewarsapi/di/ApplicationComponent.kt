@@ -13,7 +13,6 @@ import javax.inject.Singleton
     RepositoryModule::class,
     RoomModule::class,
     MappersModule::class,
-    InteractorsModule::class,
     ViewModelsModule::class])
 interface ApplicationComponent {
     fun inject(codewarsApp: CodewarsApp)

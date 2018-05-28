@@ -2,6 +2,10 @@ package com.jcmsalves.codewarsapi.data.challenge.remote.model
 
 import com.google.gson.annotations.SerializedName
 
+data class CompletededChallengesWrapperModel(
+    @SerializedName("data")
+    val challengeModels: List<CompletedChallengeModel>)
+
 data class CompletedChallengeModel(
     @SerializedName("completedAt")
     val completedAt: String,

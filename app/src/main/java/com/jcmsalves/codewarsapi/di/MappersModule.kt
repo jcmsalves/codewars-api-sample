@@ -1,7 +1,8 @@
 package com.jcmsalves.codewarsapi.di
 
+import com.jcmsalves.codewarsapi.data.challenge.mappers.AuthoredChallengeModelToAuthoredChallengeDbMapper
+import com.jcmsalves.codewarsapi.data.challenge.mappers.CompletedChallengeModelToCompletedChallengeDbMapper
 import com.jcmsalves.codewarsapi.data.user.mappers.UserAndLanguagesToUserMapper
-import com.jcmsalves.codewarsapi.data.user.mappers.UserModelToUserDbMapper
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -15,5 +16,12 @@ class MappersModule {
 
     @Provides
     @Singleton
-    fun provideUserModelToUserDbMapper(): UserModelToUserDbMapper = UserModelToUserDbMapper()
+    fun provideAuthoredChallengeModelToAuthoredChallengeDbMapper(): AuthoredChallengeModelToAuthoredChallengeDbMapper =
+        AuthoredChallengeModelToAuthoredChallengeDbMapper()
+
+    @Provides
+    @Singleton
+    fun provideCompletedChallengeModelToCompletedChallengeDbMapper(): CompletedChallengeModelToCompletedChallengeDbMapper =
+        CompletedChallengeModelToCompletedChallengeDbMapper()
+
 }

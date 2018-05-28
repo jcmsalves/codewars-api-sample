@@ -2,6 +2,7 @@ package com.jcmsalves.codewarsapi.data.di
 
 import android.arch.persistence.room.Room
 import android.content.Context
+import com.jcmsalves.codewarsapi.data.challenge.local.dao.ChallengeDao
 import com.jcmsalves.codewarsapi.data.user.local.CodewarsDatabase
 import com.jcmsalves.codewarsapi.data.user.local.dao.UserDao
 import dagger.Module
@@ -19,5 +20,9 @@ class RoomModule {
 
     @Singleton
     @Provides
-    fun providesProductDao(codewarsDatabase: CodewarsDatabase): UserDao = codewarsDatabase.userDao()
+    fun providesUserDao(codewarsDatabase: CodewarsDatabase): UserDao = codewarsDatabase.userDao()
+
+    @Singleton
+    @Provides
+    fun providesChallengeDao(codewarsDatabase: CodewarsDatabase): ChallengeDao = codewarsDatabase.challengeDao()
 }

@@ -10,6 +10,7 @@ import android.view.View
 import com.jcmsalves.codewarsapi.CodewarsApp
 import com.jcmsalves.codewarsapi.R
 import com.jcmsalves.codewarsapi.ViewModelFactory
+import com.jcmsalves.codewarsapi.domain.challenge.ChallengeRepository
 import com.jcmsalves.codewarsapi.domain.user.User
 import com.jcmsalves.codewarsapi.user.viewmodel.RecentSearchesState
 import com.jcmsalves.codewarsapi.user.viewmodel.RecentSearchesViewModel
@@ -23,6 +24,9 @@ class UsersActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
+
+    @Inject
+    lateinit var challengeRepository: ChallengeRepository
 
     private val userClickedListener: (String) -> Unit = {  }
     private val userAdapter = UserAdapter(userClickedListener)
@@ -41,6 +45,15 @@ class UsersActivity : AppCompatActivity() {
         searchIv.setOnClickListener { v ->
             if (searchInputEt.text.isNotBlank()) userSearchedViewModel.searchUser(searchInputEt.text.toString())
         }
+
+//        searchIv.setOnClickListener { v ->
+//            challengeRepository.getCompletedChallenges("geeves", false)
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                    { authored -> Toast.makeText(applicationContext, authored.toString(), Toast.LENGTH_LONG).show() },
+//                    { t: Throwable? -> Toast.makeText(applicationContext, t?.message, Toast.LENGTH_LONG).show() })
+//        }
 
         userSearchedViewModel.searchedUser.observe(this, Observer { it ->
             when (it) {

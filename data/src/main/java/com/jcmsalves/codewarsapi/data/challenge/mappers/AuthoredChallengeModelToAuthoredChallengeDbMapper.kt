@@ -1,12 +1,12 @@
-package com.jcmsalves.codewarsapi.data.challenge.mappers.authored
+package com.jcmsalves.codewarsapi.data.challenge.mappers
 
 import com.jcmsalves.codewarsapi.data.challenge.local.model.AuthoredChallengeDb
-import com.jcmsalves.codewarsapi.domain.challenge.AuthoredChallenge
+import com.jcmsalves.codewarsapi.data.challenge.remote.model.AuthoredChallengeModel
 import javax.inject.Inject
 
-class AuthoredChallengeModelToAuthoredChallengeDb @Inject constructor() {
+class AuthoredChallengeModelToAuthoredChallengeDbMapper @Inject constructor() {
 
-    fun map(from: AuthoredChallenge, username: String): AuthoredChallengeDb {
+    fun map(from: AuthoredChallengeModel, username: String): AuthoredChallengeDb {
         return AuthoredChallengeDb(
             id = from.id,
             name = from.name,

@@ -1,12 +1,12 @@
-package com.jcmsalves.codewarsapi.data.challenge.mappers.completed
+package com.jcmsalves.codewarsapi.data.challenge.mappers
 
 import com.jcmsalves.codewarsapi.data.challenge.local.model.CompletedChallengeDb
-import com.jcmsalves.codewarsapi.domain.challenge.CompletedChallenge
+import com.jcmsalves.codewarsapi.data.challenge.remote.model.CompletedChallengeModel
 import javax.inject.Inject
 
-class CompletedChallengeModelToCompletedChallengeDb @Inject constructor() {
+class CompletedChallengeModelToCompletedChallengeDbMapper @Inject constructor() {
 
-    fun map(from: CompletedChallenge, username: String): CompletedChallengeDb {
+    fun map(from: CompletedChallengeModel, username: String): CompletedChallengeDb {
         return CompletedChallengeDb(
             id = from.id,
             name = from.name,

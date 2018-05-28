@@ -1,6 +1,7 @@
 package com.jcmsalves.codewarsapi.data.di
 
 import com.jcmsalves.codewarsapi.data.BuildConfig
+import com.jcmsalves.codewarsapi.data.challenge.remote.ChallengeService
 import com.jcmsalves.codewarsapi.data.remote.interceptors.AuthInterceptor
 import com.jcmsalves.codewarsapi.data.user.remote.UserService
 import dagger.Module
@@ -43,4 +44,7 @@ class NetworkModule {
 
     @Provides
     fun provideUserService(retrofit: Retrofit): UserService = retrofit.create(UserService::class.java)
+
+    @Provides
+    fun provideChallengeService(retrofit: Retrofit): ChallengeService = retrofit.create(ChallengeService::class.java)
 }

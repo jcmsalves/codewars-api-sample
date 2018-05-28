@@ -9,10 +9,10 @@ class CompletedChallengeModelToCompletedChallengeDbMapper @Inject constructor() 
     fun map(from: CompletedChallengeModel, username: String): CompletedChallengeDb {
         return CompletedChallengeDb(
             id = from.id,
-            name = from.name,
+            name = from.name ?: "",
             completedAt = from.completedAt,
             completedLanguages = from.completedLanguages,
-            slug = from.slug,
+            slug = from.slug ?: "",
             username = username
         )
     }

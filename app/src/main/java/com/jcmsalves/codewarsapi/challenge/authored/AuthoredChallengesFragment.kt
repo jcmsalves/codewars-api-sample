@@ -17,7 +17,6 @@ import com.jcmsalves.codewarsapi.challenge.ChallengesActivity
 import com.jcmsalves.codewarsapi.challenge.authored.viewmodel.AuthoredChallengesState
 import com.jcmsalves.codewarsapi.challenge.authored.viewmodel.AuthoredChallengesViewModel
 import com.jcmsalves.codewarsapi.domain.challenge.AuthoredChallenge
-import kotlinx.android.synthetic.main.activity_users.*
 import kotlinx.android.synthetic.main.fragment_authored_challenges.*
 import javax.inject.Inject
 
@@ -33,9 +32,9 @@ class AuthoredChallengesFragment : Fragment() {
     }
 
     private val challengeClickedListener: (String) -> Unit = { it ->
-//        this.startActivity(Intent(activity, ChallengeDetailActivity::class.java).apply {
-//            putExtra(ChallengesDetailActivity.EXTRA_CHALLENGE_ID, it)
-//        })
+        //        this.startActivity(Intent(activity, ChallengeDetailActivity::class.java).apply {
+        //              putExtra(ChallengesDetailActivity.EXTRA_CHALLENGE_ID, it)
+        //        })
     }
 
     private val challengeAdapter = AuthoredChallengeAdapter(challengeClickedListener)
@@ -72,7 +71,7 @@ class AuthoredChallengesFragment : Fragment() {
 
     private fun showError() {
         authoredChallengesPb.visibility = View.GONE
-        Snackbar.make(usersActivityContainer, getString(R.string.generic_error), Snackbar.LENGTH_LONG).show()
+        Snackbar.make(authoredChallengesContainer, getString(R.string.generic_error), Snackbar.LENGTH_LONG).show()
     }
 
     private fun showLoading() {

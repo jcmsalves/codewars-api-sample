@@ -3,6 +3,7 @@ package com.jcmsalves.codewarsapi.di
 import com.jcmsalves.codewarsapi.CodewarsApp
 import com.jcmsalves.codewarsapi.challenge.ChallengesActivity
 import com.jcmsalves.codewarsapi.challenge.authored.AuthoredChallengesFragment
+import com.jcmsalves.codewarsapi.challenge.completed.CompletedChallengesFragment
 import com.jcmsalves.codewarsapi.data.di.NetworkModule
 import com.jcmsalves.codewarsapi.data.di.RoomModule
 import com.jcmsalves.codewarsapi.user.UsersActivity
@@ -24,4 +25,6 @@ interface ApplicationComponent {
     fun inject(challengesActivity: ChallengesActivity)
 
     fun inject(authoredChallengesFragment: AuthoredChallengesFragment)
+
+    fun inject(completedChallengesFragment: CompletedChallengesFragment)
 }

@@ -10,10 +10,10 @@ data class CompletedChallengeModel(
     @SerializedName("completedAt")
     val completedAt: String,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("completedLanguages")
     val completedLanguages: List<String>,
     @SerializedName("id")
     val id: String,
     @SerializedName("slug")
-    val slug: String)
+    val slug: String?)

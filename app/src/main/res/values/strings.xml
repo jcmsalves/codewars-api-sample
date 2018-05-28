@@ -19,6 +19,12 @@
     <string name="authored_challenge_item_view_label_languages">Languages:</string>
     <string name="authored_challenge_item_view_label_tags">Tags:</string>
 
+    <string name="completed_challenge_item_view_label_name">Name:</string>
+    <string name="completed_challenge_item_view_label_slug">Slug:</string>
+    <string name="completed_challenge_item_view_label_completed_languages">Completed languages:</string>
+    <string name="completed_challenge_item_view_label_completed_at">Completed at:</string>
+
     <string name="generic_error">There was an error, please try again</string>
     <string name="no_authored_challenges_label">This user does not have any authored challenges</string>
+    <string name="no_completed_challenges_label">This user does not have any completed challenges</string>
 </resources>

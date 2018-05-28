@@ -24,7 +24,7 @@ class ChallengesActivity : AppCompatActivity() {
         (application as CodewarsApp).applicationComponent.inject(this)
 
         val authoredChallengesFragment = AuthoredChallengesFragment.newInstance(username)
-        val completedChallengesFragment = CompletedChallengesFragment.newInstance()
+        val completedChallengesFragment = CompletedChallengesFragment.newInstance(username)
 
         challengesBn.selectedItemId = 0
         addFragment(authoredChallengesFragment)

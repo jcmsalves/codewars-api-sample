@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import com.jcmsalves.codewarsapi.CodewarsApp
 import com.jcmsalves.codewarsapi.R
 import com.jcmsalves.codewarsapi.challenge.authored.AuthoredChallengesFragment
 import com.jcmsalves.codewarsapi.challenge.completed.CompletedChallengesFragment
@@ -17,9 +18,12 @@ class ChallengesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_challenges)
-        actionBar?.title = "User Challenges"
+        val username = intent.extras.getString(ChallengesActivity.EXTRA_USERNAME)
+        requireNotNull(username)
 
-        val authoredChallengesFragment = AuthoredChallengesFragment.newInstance()
+        (application as CodewarsApp).applicationComponent.inject(this)
+
+        val authoredChallengesFragment = AuthoredChallengesFragment.newInstance(username)
         val completedChallengesFragment = CompletedChallengesFragment.newInstance()
 
         challengesBn.selectedItemId = 0

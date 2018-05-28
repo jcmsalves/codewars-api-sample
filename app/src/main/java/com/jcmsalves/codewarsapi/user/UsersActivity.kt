@@ -49,15 +49,6 @@ class UsersActivity : AppCompatActivity() {
             if (searchInputEt.text.isNotBlank()) userSearchedViewModel.searchUser(searchInputEt.text.toString())
         }
 
-//        searchIv.setOnClickListener { v ->
-//            challengeRepository.getCompletedChallenges("geeves", false)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                    { authored -> Toast.makeText(applicationContext, authored.toString(), Toast.LENGTH_LONG).show() },
-//                    { t: Throwable? -> Toast.makeText(applicationContext, t?.message, Toast.LENGTH_LONG).show() })
-//        }
-
         userSearchedViewModel.searchedUser.observe(this, Observer { it ->
             when (it) {
                 is SearchedUserState.Loading -> showSearchLoading()
@@ -101,7 +92,7 @@ class UsersActivity : AppCompatActivity() {
 
     private fun showError() {
         searchPb.visibility = View.GONE
-        Snackbar.make(usersActivityContainer, getString(R.string.members_activity_error_message), Snackbar.LENGTH_LONG).show()
+        Snackbar.make(usersActivityContainer, getString(R.string.generic_error), Snackbar.LENGTH_LONG).show()
     }
 
     private fun showSearchLoading() {
@@ -118,8 +109,10 @@ class UsersActivity : AppCompatActivity() {
     private fun showRecentSearches(usersList: List<User>) {
         recentSearchesPb.visibility = View.GONE
         if (usersList.isEmpty()) {
+            recentSearchesRv.visibility = View.GONE
             noSearchesLabelTv.visibility = View.VISIBLE
         } else {
+            noSearchesLabelTv.visibility = View.GONE
             recentSearchesRv.visibility = View.VISIBLE
             userAdapter.addUsers(usersList)
         }

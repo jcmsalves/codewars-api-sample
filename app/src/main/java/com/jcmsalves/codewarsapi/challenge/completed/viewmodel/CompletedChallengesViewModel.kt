@@ -2,27 +2,26 @@ package com.jcmsalves.codewarsapi.challenge.completed.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.jcmsalves.codewarsapi.challenge.authored.viewmodel.AuthoredChallengesState
-import com.jcmsalves.codewarsapi.domain.challenge.AuthoredChallenge
-import com.jcmsalves.codewarsapi.domain.challenge.getauthoredchallenges.GetAuthoredChallengesInteractor
-import com.jcmsalves.codewarsapi.domain.challenge.getauthoredchallenges.GetAuthoredChallengesRequest
+import com.jcmsalves.codewarsapi.domain.challenge.CompletedChallenge
+import com.jcmsalves.codewarsapi.domain.challenge.getCompletedChallenges.GetCompletedChallengesInteractor
+import com.jcmsalves.codewarsapi.domain.challenge.getCompletedChallenges.GetCompletedChallengesRequest
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
-class CompletedChallengesViewModel @Inject constructor(private val getAuthoredChallengesInteractor
-                                                      : GetAuthoredChallengesInteractor
+class CompletedChallengesViewModel @Inject constructor(private val getCompletedChallengesInteractor
+                                                       : GetCompletedChallengesInteractor
 ) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
-    var authoredChallenges: MutableLiveData<AuthoredChallengesState> = MutableLiveData()
+    var completedChallenges: MutableLiveData<CompletedChallengesState> = MutableLiveData()
 
-    fun getAuthoredChallenges(username: String, refresh: Boolean) = compositeDisposable.add(
-        getAuthoredChallengesInteractor.execute(GetAuthoredChallengesRequest(username, refresh))
-            .doOnSubscribe { authoredChallenges.postValue(AuthoredChallengesState.Loading()) }
+    fun getCompletedChallenges(username: String, refresh: Boolean) = compositeDisposable.add(
+        getCompletedChallengesInteractor.execute(GetCompletedChallengesRequest(username, refresh))
+            .doOnSubscribe { completedChallenges.postValue(CompletedChallengesState.Loading()) }
             .subscribe(
-                { challenges: List<AuthoredChallenge> -> authoredChallenges.postValue(AuthoredChallengesState.Data(challenges)) },
-                { _: Throwable? -> authoredChallenges.postValue(AuthoredChallengesState.Error()) })
+                { challenges: List<CompletedChallenge> -> completedChallenges.postValue(CompletedChallengesState.Data(challenges)) },
+                { _: Throwable? -> completedChallenges.postValue(CompletedChallengesState.Error()) })
     )
 
     override fun onCleared() {

@@ -5,5 +5,5 @@ import com.jcmsalves.codewarsapi.domain.challenge.AuthoredChallenge
 sealed class AuthoredChallengesState {
     class Error : AuthoredChallengesState()
     class Loading : AuthoredChallengesState()
-    data class Data(val users: List<AuthoredChallenge>) : AuthoredChallengesState()
+    data class Data(val challenges: List<AuthoredChallenge>) : AuthoredChallengesState()
 }

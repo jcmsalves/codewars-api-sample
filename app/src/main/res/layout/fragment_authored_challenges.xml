@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:animateLayoutChanges="true">
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/authoredChallengesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/spacing_small" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/noAuthoredChallengesTv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="authored fragment"/>
-</LinearLayout>
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/spacing_medium"
+        android:text="@string/no_authored_challenges_label"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/authoredChallengesPb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+</FrameLayout>

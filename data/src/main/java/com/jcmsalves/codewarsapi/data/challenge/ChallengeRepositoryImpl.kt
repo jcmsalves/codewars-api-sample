@@ -9,7 +9,6 @@ import com.jcmsalves.codewarsapi.data.challenge.remote.model.CompletedChallengeM
 import com.jcmsalves.codewarsapi.domain.challenge.AuthoredChallenge
 import com.jcmsalves.codewarsapi.domain.challenge.ChallengeRepository
 import com.jcmsalves.codewarsapi.domain.challenge.CompletedChallenge
-import io.reactivex.Observable
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -29,10 +28,6 @@ class ChallengeRepositoryImpl @Inject constructor(
 
     private fun fetchAuthoredChallengesFromDb(username: String): Single<List<AuthoredChallenge>> {
         return challengeDao.getAuthoredChallenges(username)
-            .toObservable()
-            .flatMapIterable { it }
-            .switchIfEmpty(Observable.error(Throwable("Empty authored challenges db table")))
-            .toList()
             .onErrorResumeNext { fetchAuthoredChallengesFromRemote(username) }
     }
 
@@ -57,10 +52,6 @@ class ChallengeRepositoryImpl @Inject constructor(
 
     private fun fetchCompletedChallengesFromDb(username: String): Single<List<CompletedChallenge>> {
         return challengeDao.getCompletedChallenges(username)
-            .toObservable()
-            .flatMapIterable { it }
-            .switchIfEmpty(Observable.error(Throwable("Empty completed challenges db table")))
-            .toList()
             .onErrorResumeNext { fetchCompletedChallengesFromRemote(username) }
     }
 

@@ -29,4 +29,7 @@ dependencies {
     // external dependencies
     implementation ProjectDependencies.supportAppCompat
     implementation ProjectDependencies.constraintLayout
+    implementation ProjectDependencies.cardView
+    implementation ProjectDependencies.recyclerView
+    implementation ProjectDependencies.supportDesign
 }

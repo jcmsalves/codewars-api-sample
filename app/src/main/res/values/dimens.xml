@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="divider_height">1dp</dimen>
+
+    // spacings
+    <dimen name="spacing_x_small">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+
+    // text sizes
+    <dimen name="label">14sp</dimen>
+    <dimen name="regular">16sp</dimen>
+
+</resources>

@@ -27,6 +27,9 @@ object ProjectDependencies {
     val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
 
     val supportAppCompat = "com.android.support:appcompat-v7:${Versions.appcompat}"
+    val cardView = "com.android.support:cardview-v7:${Versions.appcompat}"
+    val recyclerView = "com.android.support:recyclerview-v7:${Versions.appcompat}"
+    val supportDesign = "com.android.support:design:${Versions.appcompat}"
     val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
 
     val room = "android.arch.persistence.room:runtime:${Versions.room}"

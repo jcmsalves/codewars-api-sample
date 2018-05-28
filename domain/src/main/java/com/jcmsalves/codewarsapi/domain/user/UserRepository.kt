@@ -6,5 +6,5 @@ interface UserRepository {
 
     fun getUser(userSearch: String, refresh: Boolean): Single<User?>
 
-    fun getRecentSearchedUsers(): Single<List<User?>>
+    fun getRecentSearchedUsers(sortByLeaderboard: Boolean): Single<List<User>>
 }

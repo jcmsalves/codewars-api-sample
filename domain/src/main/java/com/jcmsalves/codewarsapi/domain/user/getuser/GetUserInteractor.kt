@@ -8,7 +8,7 @@ import com.jcmsalves.codewarsapi.domain.user.UserRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class GetUserInteractor @Inject constructor(
+open class GetUserInteractor @Inject constructor(
     private val userRepository: UserRepository,
     private val rxJava2Schedulers: RxJava2Schedulers
 ) : Interactor<GetUserRequest, User?> {

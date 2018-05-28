@@ -60,15 +60,37 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider_height"
-        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_small"
         android:background="@color/colorLightGrey" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_medium"
-        android:text="@string/members_activity_recent_searches"
-        android:textSize="@dimen/label" />
+        android:layout_marginTop="@dimen/spacing_medium">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/members_activity_recent_searches"
+            android:textSize="@dimen/label" />
+
+        <ImageView
+            android:id="@+id/timeSortIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:src="@drawable/ic_time" />
+
+        <ImageView
+            android:id="@+id/leaderBoardSortIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_medal" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -88,6 +110,13 @@
             android:gravity="center"
             android:padding="@dimen/spacing_medium"
             android:text="@string/members_activity_no_searches_label"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/recentSearchesPb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:visibility="gone" />
     </FrameLayout>
 

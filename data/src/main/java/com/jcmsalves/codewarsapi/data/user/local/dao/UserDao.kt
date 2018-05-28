@@ -18,6 +18,10 @@ interface UserDao {
     fun getUsers(): Single<MutableList<UserAndLanguages>>
 
     @Transaction
+    @Query("SELECT * FROM users ORDER BY leaderboardPosition ASC")
+    fun getUsersOrderedByLeaderboard(): Single<MutableList<UserAndLanguages>>
+
+    @Transaction
     @Query("SELECT * FROM Users WHERE username = :username")
     fun getUserByUsername(username: String): Single<UserAndLanguages>
 

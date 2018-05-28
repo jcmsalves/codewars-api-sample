@@ -42,8 +42,15 @@ class UserRepositoryImpl @Inject constructor(
             .forEach { userDao.insertUserLanguage(it) }
     }
 
-    override fun getRecentSearchedUsers(): Single<List<User?>> {
-        return userDao.getUsers()
-            .map { it.map { userMapper.map(it) }.take(5) }
+    override fun getRecentSearchedUsers(sortByLeaderboard: Boolean): Single<List<User>> {
+        return when (sortByLeaderboard) {
+            true -> userDao.getUsersOrderedByLeaderboard()
+            false -> userDao.getUsers()
+        }.map {
+            it.map { userMapper.map(it) }
+                .mapNotNull { it }
+                .take(5)
+                .reversed()
+        }
     }
 }
